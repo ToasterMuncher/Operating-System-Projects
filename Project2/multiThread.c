@@ -40,8 +40,8 @@ void *threadDotProduct(void *arg) {
 
 int main(int argc, char* argv[]) {
 
-	clock_t start, end;
-	double cpuTimeUsed;
+	struct timespec start, end;
+	double elapsedTime;
 
 	int numThreads;
 
@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
 	ThreadData threadData[numThreads];
 
 	// Begin clock
-	start = clock();
+	clock_gettime(CLOCK_MONOTONIC, &start);
 
 	// Divide rows between threads
 	int rowsPerThread = SIZE / numThreads;
@@ -111,11 +111,11 @@ int main(int argc, char* argv[]) {
 	}
 
 	// End Clock
-	end = clock();
+	clock_gettime(CLOCK_MONOTONIC, &end);
 
 	// Display time elapsed
-	cpuTimeUsed = ((double) (end - start)) / CLOCKS_PER_SEC;
-	printf("Execution time: %f seconds\n", cpuTimeUsed);
+	elapsedTime = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
+	printf("Execution time: %f seconds\n", elapsedTime);
 
         // Display Array (Used for debugging)
         /*
@@ -130,9 +130,11 @@ int main(int argc, char* argv[]) {
 	*/
 
         // Free allocated memory
-	free(matrixA[0]);
-	free(matrixB[0]);
-	free(matrixDot[0]);
+	for (int i = 0; i < SIZE; i++) {
+		free(matrixA[i]);
+		free(matrixB[i]);
+		free(matrixDot[i]);
+	}
 	free(matrixA);
 	free(matrixB);
 	free(matrixDot);
