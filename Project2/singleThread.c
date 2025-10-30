@@ -26,8 +26,8 @@ void matrixDotProduct(int** matrixDot, int** matrixA, int** matrixB) {
 
 int main(void) {
 
-	clock_t start, end;
-	double cpuTimeUsed;
+	struct timespec start, end;
+	double elapsedTime;
 
 	// Two initial dynamic  matrix's used for dot product
 	int** matrixA = (int**) malloc(SIZE * sizeof(int*));
@@ -53,13 +53,14 @@ int main(void) {
 	}
 
 	// Call function to alter matrix
-	start = clock();
+	printf("Using 1 thread\n");
+	clock_gettime(CLOCK_MONOTONIC, &start);
 	matrixDotProduct(matrixDot, matrixA, matrixB);
-	end = clock();
+	clock_gettime(CLOCK_MONOTONIC, &end);
 
 	// Measure completion time
-	cpuTimeUsed = ((double) (end - start)) / CLOCKS_PER_SEC;
-	printf("Execution time: %f seconds\n", cpuTimeUsed);
+	elapsedTime = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
+	printf("Execution time: %f seconds\n", elapsedTime);
 
 	// Display Array (Used for debugging with size 4 for ease)
 	/*
