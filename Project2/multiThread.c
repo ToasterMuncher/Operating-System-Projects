@@ -27,13 +27,14 @@ void *threadDotProduct(void *arg) {
 	// Compute assigned section of matrix
 	for (int i = data->startRow; i < data->endRow; i++) {
 		for (int j = 0; j < data->size; j++) {
-			data->matrixDot[i][j] = 0;
+			long sum = 0;
 			for (int k = 0; k < data->size; k++) {
-				data->matrixDot[i][j] += data->matrixB[k][j] * data->matrixA[i][k];
+				sum += data->matrixA[i][k] * data->matrixB[k][j];
 			}
+			data->matrixDot[i][j] = (int) sum;
 		}
 	}
-
+	//printf("Thread Done\n");
 	return NULL;
 }
 
@@ -62,16 +63,13 @@ int main(int argc, char* argv[]) {
 	printf("Using %d threads\n", numThreads);
 
         // Allocate memory for matrixs
-        int** matrixA = (int**) malloc(SIZE * sizeof(int*));
-        int** matrixB = (int**) malloc(SIZE * sizeof(int*));
-	int** matrixDot = (int**) malloc(SIZE * sizeof(int*));
-	int* dataA = (int*) malloc(SIZE * SIZE * sizeof(int));
-	int* dataB = (int*) malloc(SIZE * SIZE * sizeof(int));
-	int* dataDot = (int*) malloc(SIZE *  SIZE * sizeof(int));
+        int** matrixA =  malloc(SIZE * sizeof(int*));
+        int** matrixB =  malloc(SIZE * sizeof(int*));
+	int** matrixDot =  malloc(SIZE * sizeof(int*));
         for (int i = 0; i < SIZE; i++) {
-                matrixA[i] = dataA + (i * SIZE);
-                matrixB[i] = dataB + (i * SIZE);
-		matrixDot[i] = dataDot + (i * SIZE);
+                matrixA[i] = malloc(SIZE * sizeof(int));
+                matrixB[i] = malloc(SIZE * sizeof(int));
+		matrixDot[i] = malloc(SIZE * sizeof(int));
         }
 
         // Initialize two input  matrixs with values
@@ -101,7 +99,7 @@ int main(int argc, char* argv[]) {
 		threadData[i].size = SIZE;
 
 		// Now that we have the necessary data for a thread, we can now create it and send it to run the operations
-		if(pthread_create(&threads[i], NULL, threadDotProduct, &threadData[i]) != 0) {
+		if(pthread_create(&threads[i], NULL, threadDotProduct, (void *) &threadData[i]) != 0) {
 			perror("Failed to create thread");
 			return 1;
 		}
