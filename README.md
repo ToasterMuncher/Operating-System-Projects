@@ -45,7 +45,7 @@ Implemented a custom system call in a modified Linux kernel that will print "Jul
 **Status:** ✔️ Completed
 
 **Description**
-Developed a single threaded application used to perform a dot product on two matrices of size 2000 x 2000. Proceeded to create a multithreaded application that performs the same operations dividing each threads work among sections of rows foe each matrix.
+Developed a single threaded application used to perform a dot product on two matrices of size 2000 x 2000. Proceeded to create a multithreaded application that performs the same operations dividing each threads work among sections of rows for each matrix.
 
 **Key Concepts**
 - POSIX threads (pthreads)
