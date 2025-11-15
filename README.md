@@ -2,15 +2,16 @@
 A collection of four projects completed for TCES 420 - Principles of Operating Systems at University of Washington Tacoma, covering fundamental operating system concepts including system calls, multithreading, scheduling, and kernel drivers.
 
 ## **Table of Contents**
-- Project Overview
-- Project 1: Custom System Call
-- Project 2: Multithreaded Matrix Multiplication
-- Project 3: CPU Scheduler
-- Project 4: Linux Kernel Driver
-- Build and Run Instructions
-- Technologies Used
-- Learning Outcomes
+- [Project Overview](#Project-Overiew)
+- [Project 1: Custom System Call](#Project1)
+- [Project 2: Multithreaded Matrix Multiplication](#Project2)
+- [Project 3: CPU Scheduler](#Project3)
+- [Project 4: Linux Kernel Driver](#Project4)
+- [Build and Run Instructions](#Build-Run)
+- [Technologies Used](#Tech-Used)
+- [Learning Outcomes](#Learning-Outcomes)
 
+<a name="Project-Overview"></a>
 ## **Project Overview**
 This repository contains four projects that explore core operating system concepts:
 1. **Custom System Call** - Kernel modification and system call implementation
@@ -18,6 +19,7 @@ This repository contains four projects that explore core operating system concep
 3. **CPU Scheduler** - Process scheduling algorithms (In Progress)
 4. **Linux Kernel Driver** - Device driver development (Upcoming)
 
+<a name="Project1"></a>
 ## **Project 1: Custom System Call**
 **Status:** ✔️ Completed
 
@@ -38,6 +40,7 @@ Implemented a custom system call in a modified Linux kernel that will print "Jul
 [Fill steps in here]
 ```
 
+<a name="Project2"></a>
 ## **Project 2: Multithreaded Matrix Multiplication**
 **Status:** ✔️ Completed
 
@@ -63,12 +66,17 @@ Developed a single threaded application used to perform a dot product on two mat
 [Fill steps in here
 ```
 
+<a name="Project3"></a>
 ## **Project 3: CPU Scheduler**
 **Status:** 🚧 In Progress
 
+<a name="Project4"></a>
 ## **Project 4: Linux Kernel Driver**
 **Status:** 📋 Upcoming
 
+<a name="Build-Run"></a>
+
+<a name="Tech-Used"></a>
 ## **Technologies Used**
 - **Language:** C
 - **Build System**: Make
@@ -76,6 +84,7 @@ Developed a single threaded application used to perform a dot product on two mat
 - **Kernel Version:** [Specify Linux kernel version]
 - **Development Environment:** Raspberry Pi OS (Ubuntu Based)
 
+<a name="Learning-Outcomes"></a>
 ## **Learning Outcomes**
 Through these projects, I gained hands-on experience with:
 - Linux kernel internals and architecture
