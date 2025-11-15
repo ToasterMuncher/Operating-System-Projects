@@ -96,7 +96,9 @@ Through these projects, I gained hands-on experience with:
 
 ## **Author**
 Julio Anacleto
+
 University of Washington Tacoma | Computer Engineering
+
 Fall 2026
 
 ## **Acknowledgements**
