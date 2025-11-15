@@ -20,15 +20,19 @@ This repository contains four projects that explore core operating system concep
 
 ## **Project 1: Custom System Call**
 **Status:** ✔️ Completed
+
 **Description**
 Implemented a custom system call in a modified Linux kernel that will print "Julio Anacleto \nHello World" when called.
+
 **Key Concepts**
 - Linux kernel compilation and configuration
 - System call table modification
 - Kernel space vs. user space
 - System call interface design
+
 **Files**
-- [project1-custom-syscall/](Operating-System-Projects/Project1) - Contains kernel patches and test program
+- [project1-custom-syscall/](/Project1) - Contains kernel patches and test program
+
 **How to Run**
 ```
 [Fill steps in here]
@@ -36,19 +40,24 @@ Implemented a custom system call in a modified Linux kernel that will print "Jul
 
 ## **Project 2: Multithreaded Matrix Multiplication**
 **Status:** ✔️ Completed
+
 **Description**
 Developed a single threaded application used to perform a dot product on two matrices of size 2000 x 2000. Proceeded to create a multithreaded application that performs the same operations dividing each threads work among sections of rows foe each matrix.
+
 **Key Concepts**
 - POSIX threads (pthreads)
 - Thread creation and management
 - Workload distribution strategies
 - Performance optimization through parallelism
 - Thread synchronization
+
 **Performance**
 - Matrix size: 2000 x 2000
 - 1 Thread -
+
 **Files**
-- [project2-matrix-multiplication/](Operating-System-Projects/Project2) - Source code and performance benchmarks
+- [project2-matrix-multiplication/](/Project2) - Source code and performance benchmarks
+
 **How to Run**
 ```
 [Fill steps in here
