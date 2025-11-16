@@ -56,7 +56,11 @@ Developed a single threaded application used to perform a dot product on two mat
 
 **Performance**
 - Matrix size: 2000 x 2000
-- 1 Thread -
+- 1 Thread - Average Runtime: 21.27 s
+- 2 Threads - Average Runtime: 17.06 s - Average Speedup: 1.25
+- 4 Threads - Average Runtime: 11.53 s - Average Speedup: 1.85
+- 8 Threads - Average Runtime: 12.33 s - Average Speedup: 1.72
+- 16 Threads - Average Runtime: 12.68 s - Average Speedup: 1.68
 
 **Files**
 - [project2-matrix-multiplication/](/Project2) - Source code and performance benchmarks
@@ -81,7 +85,7 @@ Developed a single threaded application used to perform a dot product on two mat
 - **Language:** C
 - **Build System**: Make
 - **Threading:** POSIX Threads (pthreads)
-- **Kernel Version:** [Specify Linux kernel version]
+- **Kernel Version:** 6.12
 - **Development Environment:** Raspberry Pi OS (Ubuntu Based)
 
 <a name="Learning-Outcomes"></a>
@@ -95,11 +99,7 @@ Through these projects, I gained hands-on experience with:
 - Low-level hardware interaction
 
 ## **Author**
-Julio Anacleto
-
-University of Washington Tacoma | Computer Engineering
-
-Fall 2026
+Julio Anacleto - University of Washington Tacoma | Computer Engineering - Fall 2025
 
 ## **Acknowledgements**
 Course Instructor: Matt Tolentino
