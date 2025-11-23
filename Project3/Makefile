@@ -3,15 +3,15 @@ CC	= gcc
 CFLAGS	= -O3
 
 # Targets
-all: main.c
+all: Project3.c
 
 # Multi-threaded program
-threadScheduler.run: main.c
-	$(CC) $(CFLAGS) -pthread main.c -o threadScheduler.run
+Project3.run: Project3.c
+	$(CC) $(CFLAGS) -pthread Project3.c -o Project3.run
 
 # Clean build artifacts
 clean:
-	rm -f threadScheduler.run
+	rm -f Project3.run
 
 # Phony targets
 .PHONY: all clean
