@@ -347,7 +347,6 @@ void* job_submitter_thread(void* arg) {
             enqueue(&ReadyQueue, job);
             printf("Job %d has been added to CPU Queue\n", job->jobID);
             pthread_mutex_unlock(&ready_mutex);
-            free(job);
         }
 
         pthread_mutex_lock(&finished_mutex);
